@@ -1,6 +1,7 @@
 import socket
 import sys
 import random
+import asyncio
 
 def recv_int(conn):
     return socket.ntohl(int.from_bytes(conn.recv(4),sys.byteorder))
@@ -58,5 +59,7 @@ class Tree_Server:
             resp = recv_str(sock)
             sock.close()
             return resp
-
-
+    def send_nr(self):
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        sock.connect(self.full_addr)
+        sock.close()
