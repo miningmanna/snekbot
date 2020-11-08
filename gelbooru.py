@@ -104,13 +104,7 @@ class Gelbooru(commands.Cog):
     async def add_tags(self,ctx):
         tag_list =(await self.get_tags(ctx))
         tags = tag_list.split(" ")
-
-        #await ctx.message.channel.send("Adding the tag " + str(tags))
-        #random.seed()
-        #nr = random.randint(3,10)
-        #await ctx.message.channel.send("A tag is: " + str(tags[nr]))
-        for i in range(len(tags)):
-            self.serv.add_tag(tags[i])
+        self.serv.add_tag(tags)
 
 
 
