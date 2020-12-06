@@ -20,7 +20,7 @@ class twitterlistener(commands.Cog):
     async def get_tweet(self):
         latest_tweet = None
         while True:
-            tweet = self.client.user_timeline("726509762406453248", count=1)[0]
+            tweet = self.client.user_timeline("3096462845", count=1)[0]
             if tweet.in_reply_to_status_id == None and tweet.id != latest_tweet:
                 for i in self.chanel_list:
                     await i.send("https://twitter.com/"+tweet.user.name+"/status/"+str(tweet.id))
