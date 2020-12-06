@@ -15,8 +15,8 @@ class twitterlistener(commands.Cog):
         self.client = tweepy.API(auth)
         self.chanel_list = []
         self.bot = bot
-        asyncio.run(self.get_tweet())
-
+        self.get_tweet()
+    @sync
     async def get_tweet(self):
         latest_tweet = None
         while True:
