@@ -16,7 +16,7 @@ class twitterlistener(commands.Cog):
         self.chanel_list = []
         self.bot = bot
         asyncio.create_task(self.get_tweet())
-    @sync
+ 
     async def get_tweet(self):
         latest_tweet = None
         while True:
