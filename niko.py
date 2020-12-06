@@ -10,7 +10,6 @@ from discord.ext import commands
 
 class twitterlistener(commands.Cog):
     def __init__(self,bot):
-        print("I'm here!")
         auth = OAuthHandler("CarhTKVMSPh1kU5J4dNtx0SMx","Dl37LqaUFW6IKQFsDMIfabg18ZGPsSpgHOz4ZmBiaVjW3aw1Gq")
         auth.set_access_token("726509762406453248-ie2V0yN6bNmYpKJWzXAQJb1pXckLmLP","tafJFVOCoPPIf3FyD6boUShpWb75XAK03ayLumrJsHlTy")
         self.client = tweepy.API(auth)
@@ -31,7 +30,7 @@ class twitterlistener(commands.Cog):
     @commands.command()
     async def add_this(self,ctx):
             self.chanel_list.append(ctx.message.channel)
-            ctx.message.channel.send("Added this channel to the list!")
+            await ctx.message.channel.send("Added this channel to the list!")
 
 def setup(bot):
     bot.add_cog(twitterlistener(bot))
