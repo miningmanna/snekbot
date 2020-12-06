@@ -27,7 +27,10 @@ class twitterlistener(commands.Cog):
                 latest_tweet = tweet.id
             await asyncio.sleep(10)
 
+    @commands.command()
     async def add_this(self,ctx):
             self.chanel_list.append(ctx.message.channel)
             ctx.message.channel.send("Added this channel to the list!")
 
+def setup(bot):
+    bot.add_cog(twitterlistener(bot))
