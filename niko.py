@@ -2,6 +2,7 @@ from  tweepy import OAuthHandler
 import tweepy
 import asyncio
 import discord
+from discord.ext import commands
 #CONSUMER_KEY = "CarhTKVMSPh1kU5J4dNtx0SMx"
 #CONSUMER_SECRET = "Dl37LqaUFW6IKQFsDMIfabg18ZGPsSpgHOz4ZmBiaVjW3aw1Gq"
 #ACCESS_TOKEN = "726509762406453248-ie2V0yN6bNmYpKJWzXAQJb1pXckLmLP"
