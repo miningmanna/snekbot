@@ -25,7 +25,7 @@ class twitterlistener(commands.Cog):
                 for i in self.chanel_list:
                     await i.send("https://twitter.com/"+tweet.user.name+"/status/"+str(tweet.id))
                 latest_tweet = tweet.id
-            await asyncio.sleep(10)
+            await asyncio.sleep(30)
 
     @commands.command()
     async def add_this(self,ctx):
