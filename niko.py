@@ -31,6 +31,8 @@ class twitterlistener(commands.Cog):
     async def add_this(self,ctx):
             self.chanel_list.append(ctx.message.channel)
             await ctx.message.channel.send("Added this channel to the list!")
+            tweet = self.client.user_timeline("3096462845", count=1)[0]
+            await i.send("The latest tweet is: https://twitter.com/" + tweet.user.name + "/status/" + str(tweet.id))
 
 def setup(bot):
     bot.add_cog(twitterlistener(bot))
