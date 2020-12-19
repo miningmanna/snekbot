@@ -41,6 +41,7 @@ class twitterlistener(commands.Cog):
 
     @commands.command()
     async def niko_moment(self,ctx):
+        tweet = self.client.user_timeline("3096462845", count=1)[0]
         await ctx.message.channel.send("The latest niko tweet is: https://twitter.com/" + tweet.user.name + "/status/" + str(tweet.id))
         await ctx.message.channel.send("https://tenor.com/view/niko-gif-18543948")
 
