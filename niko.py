@@ -5,16 +5,16 @@ import discord
 from discord.ext import commands
 #CONSUMER_KEY = "CarhTKVMSPh1kU5J4dNtx0SMx"
 #CONSUMER_SECRET = "Dl37LqaUFW6IKQFsDMIfabg18ZGPsSpgHOz4ZmBiaVjW3aw1Gq"
-#ACCESS_TOKEN = "726509762406453248-ie2V0yN6bNmYpKJWzXAQJb1pXckLmLP"
-#ACCESS_TOKEN_SECRET = "tafJFVOCoPPIf3FyD6boUShpWb75XAK03ayLumrJsHlTy"
+#ACCESS_TOKEN = "726509762406453248-mwzLPJescuCAzlQ0jGXlKUt3mXr8qS0"
+#ACCESS_TOKEN_SECRET = "4gdabNFwautslbM2mevnLw1kutkQkPnlNnNufMvIWDsGa"
 
 class twitterlistener(commands.Cog):
     def __init__(self,bot):
+        self.bot = bot
         auth = OAuthHandler("CarhTKVMSPh1kU5J4dNtx0SMx","Dl37LqaUFW6IKQFsDMIfabg18ZGPsSpgHOz4ZmBiaVjW3aw1Gq")
-        auth.set_access_token("726509762406453248-ie2V0yN6bNmYpKJWzXAQJb1pXckLmLP","tafJFVOCoPPIf3FyD6boUShpWb75XAK03ayLumrJsHlTy")
+        auth.set_access_token("726509762406453248-mwzLPJescuCAzlQ0jGXlKUt3mXr8qS0","4gdabNFwautslbM2mevnLw1kutkQkPnlNnNufMvIWDsGa")
         self.client = tweepy.API(auth)
         self.chanel_list = []
-        self.bot = bot
         bot.loop.create_task(self.get_tweet())
 
     async def get_tweet(self):
