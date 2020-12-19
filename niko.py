@@ -29,10 +29,13 @@ class twitterlistener(commands.Cog):
 
     @commands.command()
     async def add_this(self,ctx):
-            self.chanel_list.append(ctx.message.channel)
-            await ctx.message.channel.send("Added this channel to the list!")
-            tweet = self.client.user_timeline("3096462845", count=1)[0]
-            await i.send("The latest tweet is: https://twitter.com/" + tweet.user.name + "/status/" + str(tweet.id))
+            if (ctx.message.channel not in self.chanel_list):
+                self.chanel_list.append(ctx.message.channel)
+                await ctx.message.channel.send("Added this channel to the list!")
+                tweet = self.client.user_timeline("3096462845", count=1)[0]
+                await ctx.message.channel.send("The latest tweet is: https://twitter.com/" + tweet.user.name + "/status/" + str(tweet.id))
+            else:
+                await ctx.message.channel.send("This channel is already in the list!")
 
 def setup(bot):
     bot.add_cog(twitterlistener(bot))
