@@ -24,6 +24,7 @@ class twitterlistener(commands.Cog):
             if tweet.in_reply_to_status_id == None and tweet.id != latest_tweet:
                 for i in self.chanel_list:
                     await i.send("https://twitter.com/"+tweet.user.name+"/status/"+str(tweet.id))
+                    await i.send("https://tenor.com/view/niko-gif-18543948")
                 latest_tweet = tweet.id
             await asyncio.sleep(30)
 
@@ -34,8 +35,16 @@ class twitterlistener(commands.Cog):
                 await ctx.message.channel.send("Added this channel to the list!")
                 tweet = self.client.user_timeline("3096462845", count=1)[0]
                 await ctx.message.channel.send("The latest tweet is: https://twitter.com/" + tweet.user.name + "/status/" + str(tweet.id))
+                await ctx.message.channel.send("https://tenor.com/view/niko-gif-18543948")
             else:
                 await ctx.message.channel.send("This channel is already in the list!")
+
+    @commands.command()
+    async def niko_moment(self,ctx):
+        await ctx.message.channel.send("The latest niko tweet is: https://twitter.com/" + tweet.user.name + "/status/" + str(tweet.id))
+        await ctx.message.channel.send("https://tenor.com/view/niko-gif-18543948")
+
+
 
 def setup(bot):
     bot.add_cog(twitterlistener(bot))
