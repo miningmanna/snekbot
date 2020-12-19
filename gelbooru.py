@@ -164,7 +164,6 @@ class Gelbooru(commands.Cog):
                     new_tags.append(x)
 
         if new_tags:
-            new_tags = tuple(new_tags)
             self.last_tags[cid] = tuple(self.last_tags[cid]) + tuple(new_tags)  # append extra tags for further "again" searches
 
         res, tags = await self.get_image(*self.last_tags[cid])
